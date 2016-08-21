@@ -5,7 +5,7 @@ var _controller = function Controller(base) {
   this.getEndpoints = {};
   this.postEndpoints = {};
   this.putEndpoints = {};
-  this.deleteEndpoints = {};
+  this.delEndpoints = {};
 };
 
 _controller.prototype.get = function(path, handler) {
@@ -21,11 +21,11 @@ _controller.prototype.put = function(path, handler) {
 }
 
 _controller.prototype.delete = function(path, handler) {
-  this.deleteEndpoints[path] = handler;
+  this.delEndpoints[path] = handler;
 }
 
 _controller.prototype.register = function(server) {
-  var methods = ["get", "post", "put", "delete"]
+  var methods = ["get", "post", "put", "del"]
   for(var i in methods) {
     var method = methods[i];
     for(var path in this[method + "Endpoints"]) {

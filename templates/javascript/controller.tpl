@@ -30,5 +30,17 @@ module.exports = function(Controller, Services, restify) {
       next();
     });
   });
+  controller.put("/:id", function(req, res, next) {
+    Services.{{ name }}Service.update(req.params.id, req.body).then(function({{ name|lower }}) {
+      res.send(204);
+      next();
+    });
+  });
+  controller.delete("/:id", function(req, res, next) {
+    Services.{{ name }}Service.delete(req.params.id).then(function() {
+      res.send(204);
+      next();
+    });
+  });
   return controller;
 }
