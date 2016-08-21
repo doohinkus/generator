@@ -24,7 +24,7 @@ class AbstractCoder:
         copytree(src, dst_base_path)
 
     def writeToFile(self, dst, contents):
-        with open(dst, "wb") as f:
+        with open(dst, "w") as f:
             f.write(contents)
 
     def getMetaData(self, models, specifics):
