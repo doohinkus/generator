@@ -30,7 +30,7 @@ class JavascriptCoder(AbstractCoder):
 
     def generateServer(self, dst_base_path, models):
         metadata = self.getMetaData(models, JavascriptCoder.specifics)
-        #self.createBoilerPlate(dst_base_path)
+        self.createBoilerPlate(dst_base_path)
         for entity in metadata["entities"]:
             self.createModel(dst_base_path, entity)
             self.createService(dst_base_path, entity)
