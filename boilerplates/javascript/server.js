@@ -6,6 +6,7 @@ var controllers = require("./controllers").get(services, restify);
 var initialize = require("./util/initialize");
 
 var server = restify.createServer();
+server.use(restify.bodyParser({mapParams: false}));
 server.pre(serveStatic('public', {'index': "index.html"}));
 for(var i in controllers) {
   controllers[i].register(server);

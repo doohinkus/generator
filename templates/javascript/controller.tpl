@@ -20,5 +20,15 @@ module.exports = function(Controller, Services, restify) {
       next();
     });
   });
+  controller.post("", function(req, res, next) {
+    Services.{{ name }}Service.save(req.body).then(function({{ name|lower }}) {
+      if({{ name|lower }} == null) {
+        next(new restify.BadRequestError("bad request data"));
+        return;
+      }
+      res.send(204);
+      next();
+    });
+  });
   return controller;
 }

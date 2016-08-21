@@ -12,6 +12,9 @@ module.exports = function(models) {
       },
       findAll: function() {
         return models.{{ name }}.findAll();
+      },
+      save: function({{ name|lower }}) {
+        return models.{{ name }}.create({{ name|lower }});
       }
     }
   };
