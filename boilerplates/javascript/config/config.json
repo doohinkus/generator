@@ -1,0 +1,11 @@
+{
+  "production": {
+
+  },
+  "development": {
+    "dialect": "sqlite",
+    "username": "sample",
+    "password": "sample",
+    "database": "blog"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "andy autida",
+  "license": "MIT",
+  "dependencies": {
+    "restify": "^4.1.1",
+    "sequelize": "^3.24.1",
+    "serve-static-restify": "^1.0.0",
+    "sqlite3": "^3.1.4"
+  }
+}
