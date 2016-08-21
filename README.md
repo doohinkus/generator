@@ -2,24 +2,30 @@
 
 ##Usage
 ```python
-import generator.Coder
-from generator.Coder.JavascriptCoder import JavascriptCoder
-from generator.Model import Model, Field
+from generator.Project import Project
 import os
 
 if __name__ == "__main__":
-    coder = JavascriptCoder()
-    dst = os.path.join(os.path.dirname(os.path.abspath(__file__)), "working_dir")
-    account = Model("Account", [
-        Field("username", "string"),
-        Field("password", "string"),
-        Field("username", "string"),
-        Field("password", "string")
+    dst = "working_dir"
+    project = Project("Blog", "javascript", dst)
+    project.addModels([
+        {
+            "name": "Account",
+            "fields": [
+                {"name": "username", "datatype": "string"},
+                {"name": "password", "datatype": "string"},
+                {"name": "firstname", "datatype": "string"},
+                {"name": "lastname", "datatype": "string"}
+            ]
+        },
+        {
+            "name": "Blog",
+            "fields": [
+                {"name": "title", "datatype": "string"},
+                {"name": "body", "datatype": "text"},
+                {"name": "created", "datatype": "date"}
+            ]
+        }
     ])
-    blog = Model("Blog", [
-        Field("title", "string"),
-        Field("body", "text"),
-        Field("created", "date")
-    ])
-    coder.generateServer(dst, [account, blog])
+    print project.build()
 ```
