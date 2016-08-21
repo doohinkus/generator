@@ -15,8 +15,6 @@ for(var i in controllers) {
 module.exports = {
   start: function() {
     models.sequelize.sync().then(function() {
-      return initialize(models.models);
-    }).then(function() {
       server.listen(8080, function() {
         console.log("%s listening at %s", server.name, server.url);
       });
