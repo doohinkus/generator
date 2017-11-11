@@ -1,5 +1,5 @@
 class LanguageNotSupportedException(Exception):
-    def __init__(self, langauge):
+    def __init__(self, language):
         self.language = language
         self.msg = "language not supported: " + language
 
